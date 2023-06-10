@@ -1,31 +1,31 @@
-// const firstName = prompt('Напишите ваше имя?');
-// console.log(firstName);
+const firstName = prompt('Напишите ваше имя?');
+console.log(firstName);
 
-// function user() {
-//   let age = prompt('Возраст?', 20);
+function user() {
+  let age = prompt('Возраст?', 20);
   
-//   if (age < 20) {
-//     alert(`Привет, ${firstName}!`);
-//   } else if (age >= 20 && age < 45) {
-//     alert(`Здравствуй, ${firstName}!`);
-//   } else  if (age >= 45){
-//     alert(`Здравствуйте, ${firstName}!`);
-//   }
+  if (age < 20) {
+    alert(`Привет, ${firstName}!`);
+  } else if (age >= 20 && age < 45) {
+    alert(`Здравствуй, ${firstName}!`);
+  } else  if (age >= 45){
+    alert(`Здравствуйте, ${firstName}!`);
+  }
     
-// }
-// user();
+}
+user();
 
-// const students = ['Aнтон', 'Иван', 'Борис', 'Влад', 'Григорий'];
-// for (let i = 0; i < students.length; i++) {
-//  let x = prompt("Имя студента");
-//  if (x) {
-//   alert(`${x}`);
+const students = ['Aнтон', 'Иван', 'Борис', 'Влад', 'Григорий'];
+for (let i = 0; i < students.length; i++) {
+ let x = prompt("Имя студента");
+ if (x) {
+  alert(`${x}`);
 
-//  } else {
-//   alert(`${students}.`);
-//  }
+ } else {
+  alert(`${students}.`);
+ }
   
-// }
+}
 function checkCart (goodsQuantity, totalCost, promoCode) {
   let finalCost;
   let discount_1;
