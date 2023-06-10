@@ -1,11 +1,53 @@
-console.log("niw branch");
+const firstName = prompt('Напишите ваше имя?');
+console.log(firstName);
+
+function user() {
+  let age = prompt('Возраст?', 20);
+  
+  if (age < 20) {
+    alert(`Привет, ${firstName}!`);
+  } else if (age >= 20 && age < 45) {
+    alert(`Здравствуй, ${firstName}!`);
+  } else  if (age >= 45){
+    alert(`Здравствуйте, ${firstName}!`);
+  }
+    
+}
+user();
+
+const students = ['Aнтон', 'Иван', 'Борис', 'Влад', 'Григорий'];
+for (let i = 0; i < students.length; i++) {
+ let x = prompt("Имя студента");
+ if (x) {
+  alert(`${x}`);
+
+ } else {
+  alert(`${students}.`);
+ }
+  
+}
+function checkCart (goodsQuantity, totalCost, promoCode) {
+  let finalCost;
+  if ( goodsQuantity > 10) {
+    finalCost = totalCost - (totalCost / 100) * 5;
+  } else if (goodsQuantity > 20) {
+    finalCost = totalCost - (totalCost / 100) * 10;
+  }
+  if (totalCost > 10000) {
+    finalCost = totalCost - 1000;
+  }
+  if (promoCode) {
+    finalCost = totalCost - (totalCost / 100) * 15;
+  }
 
 
+  return finalCost
+}
+checkCart();
 
 
-
-
-
+console.log(checkCart(12, 11000, true));
+// 9350
 
 
 // let boss;
