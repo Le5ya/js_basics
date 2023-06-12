@@ -1,78 +1,82 @@
-const firstName = prompt('Напишите ваше имя?');
-console.log(firstName);
+// const firstName = prompt('Напишите ваше имя?');
+// console.log(firstName);
 
-function user() {
-  let age = prompt('Возраст?', 20);
+// function user() {
+//   let age = prompt('Возраст?', 20);
   
-  if (age < 20) {
-    alert(`Привет, ${firstName}!`);
-  } else if (age >= 20 && age < 45) {
-    alert(`Здравствуй, ${firstName}!`);
-  } else  if (age >= 45){
-    alert(`Здравствуйте, ${firstName}!`);
-  }
+//   if (age < 20) {
+//     alert(`Привет, ${firstName}!`);
+//   } else if (age >= 20 && age < 45) {
+//     alert(`Здравствуй, ${firstName}!`);
+//   } else  if (age >= 45){
+//     alert(`Здравствуйте, ${firstName}!`);
+//   }
     
+// }
+// user();
+
+let students = [];
+let i = 0;
+let x = prompt("Имя студента.");
+function studentsList() {
+while(x) {
+  students[i] = x;
+  i++;
+  x = prompt("Имя студента.");
 }
-user();
-
-const students = ['Aнтон', 'Иван', 'Борис', 'Влад', 'Григорий'];
-for (let i = 0; i < students.length; i++) {
- let x = prompt(`${students}.`);
- if (x) {
-  alert(`${x}`);
-
- } else {
-  alert(`${students}.`);
- }
+  console.log(`${students}.`);
+  // alert(`${students}.`);
   
 }
-function checkCart (goodsQuantity, totalCost, promoCode) {
-  let finalCost;
-  let discount_1;
-  let discount_2;
-  let discount_3;
-  
-  goodsQuantity = prompt("Количество", 10);
-  totalCost = prompt("Общая стоимость", 10000);
-  promoCode = prompt("Введите промокод");
-  promoCode = promoCode.toLowerCase();
-  console.log(promoCode);
+studentsList();
 
-  if (goodsQuantity > 0 && goodsQuantity <= 10 ) {
-    discount_1 = 0;
-  } else if ( goodsQuantity > 10 && goodsQuantity <= 20) {
-    discount_1 = (totalCost / 100) * 5;
-  } else if (goodsQuantity > 20) {
-    discount_1 = (totalCost / 100) * 10;
-  }
+// function checkCart (goodsQuantity, totalCost, promoCode) {
+//   let finalCost;
+//   let discount_1;
+//   let discount_2;
+//   let discount_3;
+  
+//   goodsQuantity = prompt("Количество", 10);
+//   totalCost = prompt("Общая стоимость", 10000);
+//   promoCode = prompt("Введите промокод");
+//   promoCode = promoCode.toLowerCase();
+//   console.log(promoCode);
+
+//   if (goodsQuantity > 0 && goodsQuantity <= 10 ) {
+//     discount_1 = 0;
+//   } else if ( goodsQuantity > 10 && goodsQuantity <= 20) {
+//     discount_1 = (totalCost / 100) * 5;
+//   } else if (goodsQuantity > 20) {
+//     discount_1 = (totalCost / 100) * 10;
+//   }
   
 
-  if (totalCost > 0 && totalCost <= 10000) {
-    discount_2 = 0;
-  } else if (totalCost > 10000) {
-    discount_2 = 1000;
-  }
+//   if (totalCost > 0 && totalCost <= 10000) {
+//     discount_2 = 0;
+//   } else if (totalCost > 10000) {
+//     discount_2 = 1000;
+//   }
  
-  if (promoCode === "methed") {
-    discount_3 = (totalCost / 100) * 15;
-  } else {
-    discount_3 = 0;
-  }
-  discount = discount_1 + discount_2 + discount_3;
-  finalCost = totalCost - discount;
+//   if (promoCode === "methed") {
+//     discount_3 = (totalCost / 100) * 15;
+//   } else {
+//     discount_3 = 0;
+//   }
+//   discount = discount_1 + discount_2 + discount_3;
+//   finalCost = totalCost - discount;
 
-  alert(`
-  Общая стоимость ${totalCost},
-  Скидка по количеству ${discount_1},
-  Скидка по общей стоимости ${discount_2},
-  Скидка по промокоду ${discount_3},
-  Суммарная скидка ${discount},
-  Итоговая стоимость ${finalCost}`);
+//   alert(`
+//   Общая стоимость ${totalCost},
+//   Скидка по количеству ${discount_1},
+//   Скидка по общей стоимости ${discount_2},
+//   Скидка по промокоду ${discount_3},
+//   Суммарная скидка ${discount},
+//   Итоговая стоимость ${finalCost}`);
 
-  return finalCost;
+//   return finalCost;
 
-}
-(checkCart());
+// }
+// (checkCart());
 
 
 
