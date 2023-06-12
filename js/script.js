@@ -17,7 +17,7 @@ user();
 
 const students = ['Aнтон', 'Иван', 'Борис', 'Влад', 'Григорий'];
 for (let i = 0; i < students.length; i++) {
- let x = prompt("Имя студента");
+ let x = prompt(`${students}.`);
  if (x) {
   alert(`${x}`);
 
@@ -32,29 +32,48 @@ function checkCart (goodsQuantity, totalCost, promoCode) {
   let discount_2;
   let discount_3;
   
+  goodsQuantity = prompt("Количество", 10);
+  totalCost = prompt("Общая стоимость", 10000);
+  promoCode = prompt("Введите промокод");
+  promoCode = promoCode.toLowerCase();
+  console.log(promoCode);
 
-  if ( goodsQuantity > 10) {
+  if (goodsQuantity > 0 && goodsQuantity <= 10 ) {
+    discount_1 = 0;
+  } else if ( goodsQuantity > 10 && goodsQuantity <= 20) {
     discount_1 = (totalCost / 100) * 5;
   } else if (goodsQuantity > 20) {
     discount_1 = (totalCost / 100) * 10;
   }
-  if (totalCost > 10000) {
+  
+
+  if (totalCost > 0 && totalCost <= 10000) {
+    discount_2 = 0;
+  } else if (totalCost > 10000) {
     discount_2 = 1000;
   }
-  if (promoCode) {
+ 
+  if (promoCode === "methed") {
     discount_3 = (totalCost / 100) * 15;
+  } else {
+    discount_3 = 0;
   }
   discount = discount_1 + discount_2 + discount_3;
   finalCost = totalCost - discount;
 
+  alert(`
+  Общая стоимость ${totalCost},
+  Скидка по количеству ${discount_1},
+  Скидка по общей стоимости ${discount_2},
+  Скидка по промокоду ${discount_3},
+  Суммарная скидка ${discount},
+  Итоговая стоимость ${finalCost}`);
 
-  return finalCost
+  return finalCost;
+
 }
-checkCart();
+(checkCart());
 
-
-console.log(checkCart(12, 11000, true));
-//finalCost === 7800
 
 
 // let boss;
