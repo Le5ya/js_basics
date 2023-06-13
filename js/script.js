@@ -47,7 +47,7 @@ const cardList = document.createElement('ul');
 cardList.className = "card__list";
 div.append(cardList);
 
-for (let i = 0; i <= 7; i++) {
+for (let i = 0; i < gallery.length; i++) {
   const cardItem = document.createElement('li');
   cardItem.className = "card__item";
   cardList.append(cardItem);
@@ -63,7 +63,7 @@ for (let i = 0; i <= 7; i++) {
   cardList.style.cssText = `
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 236px);
+    grid-template-rows: repeat(2, 1fr);
     column-gap: 20px;
   `;
  
