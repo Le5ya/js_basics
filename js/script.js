@@ -38,8 +38,9 @@ document.body.append(div);
 
 div.style.border = '3px solid olive';
 div.style.maxWidth = '1225px';
-div.style.margin = '0 auto';
+div.style.margin = '20px auto';
 div.style.padding = '20px';
+
 
 function addList() {
 const cardList = document.createElement('ul');
