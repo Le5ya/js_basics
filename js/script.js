@@ -1,86 +1,82 @@
-// const firstName = prompt('Напишите ваше имя?');
-// console.log(firstName);
+const gallery = [
+   {
+    url: "img/bentley.jpg",
+    title: "Бентли"
+  },
+   {
+    url: "img/bmw.jpg",
+    title: "БМВ"
+  },
+   {
+    url: "img/buick-riviera.jpg",
+    title: "Бьюик-Ривера"
+  },
+   {
+    url: "img/ferrari.jpg",
+    title: "Феррари"
+  },
+   {
+    url: "img/ford.jpg",
+    title: "Форд"
+  },
+   {
+    url: "img/jaguar.jpg",
+    title: "Ягуар"
+  },
+   {
+    url: "img/mazda.jpg",
+    title: "Мазда"
+  },
+   {
+    url: "img/shevrolee.jpg",
+    title: "Шевроле"
+  },
+];
+const div = document.createElement('div');
+div.className = "app";
+document.body.append(div);
 
-// function user() {
-//   let age = prompt('Возраст?', 20);
-  
-//   if (age < 20) {
-//     alert(`Привет, ${firstName}!`);
-//   } else if (age >= 20 && age < 45) {
-//     alert(`Здравствуй, ${firstName}!`);
-//   } else  if (age >= 45){
-//     alert(`Здравствуйте, ${firstName}!`);
-//   }
-    
-// }
-// user();
+div.style.border = '3px solid olive';
+div.style.maxWidth = '1225px';
+div.style.margin = '0 auto';
+div.style.padding = '20px';
 
-// const students = ['Aнтон', 'Иван', 'Борис', 'Влад', 'Григорий'];
-// for (let i = 0; i < students.length; i++) {
-//  let x = prompt("Имя студента");
-//  if (x) {
-//   alert(`${x}`);
+function addList() {
+const cardList = document.createElement('ul');
+cardList.className = "card__list";
+div.append(cardList);
 
-//  } else {
-//   alert(`${students}.`);
-//  }
-  
-// }
-// function checkCart (goodsQuantity, totalCost, promoCode) {
-//   let finalCost;
-//   let discount_1;
-//   let discount_2;
-//   let discount_3;
-  
+for (let i = 0; i <= 7; i++) {
+  const cardItem = document.createElement('li');
+  cardItem.className = "card__item";
+  cardList.append(cardItem);
 
-//   if ( goodsQuantity > 10) {
-//     discount_1 = (totalCost / 100) * 5;
-//   } else if (goodsQuantity > 20) {
-//     discount_1 = (totalCost / 100) * 10;
-//   }
-//   if (totalCost > 10000) {
-//     discount_2 = 1000;
-//   }
-//   if (promoCode) {
-//     discount_3 = (totalCost / 100) * 15;
-//   }
-//   discount = discount_1 + discount_2 + discount_3;
-//   finalCost = totalCost - discount;
+  cardItem.innerHTML = `
+  <figure>
+  <img src="${gallery[i].url}" alt="">
+  <figcaption>${gallery[i].title}</figcaption>
+</figure>
+  `;
 
+}
+  cardList.style.cssText = `
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 236px);
+    column-gap: 20px;
+  `;
+ 
+const img = cardList.querySelectorAll('img');
+img[1].style.width = '100%';
+img[6].style.width = '100%';
+img[6].style.minHeight = '190px';
 
-//   return finalCost
-// }
-// checkCart();
+img[3].style.maxHeight = '190px';
+img[3].style.width = '100%';
+img[7].style.maxHeight = '190px';
+img[7].style.width = '100%';
+img[4].style.maxHeight = '190px';
+img[4].style.width = '100%';
 
-
-// console.log(checkCart(12, 11000, true));
-//finalCost === 7800
-
-
-// let boss;
-// let name = "Lilia";
-// boss = name;
-// alert(`Добрый день, ${boss}`);
-
-// let a = "" + 2 + 0; 
-// console.log(a);
-// // Получилось 20,конкатенация строк, потому что первой и идёт строка, остальные данные приводятся к типу "строка"
-// let b = "" - 2 + 0;
-// // - 2, хотя первой стоит пустая строка, минус перед строковым значением преобразует его в число 
-// console.log(b);
-// const boolean = "4" > "22"
-// console.log(boolean);
-// //true, Строки сравниваются посимвольно. Если первый символ первой строки больше, чем первый символ второй, то первая строка больше  второй. 4 > 2
-// let d = 4 + 7 + "px";
-// //11px, "работа" движется слева направо. Поэтому числа 4 + 7, пока не дошли до строки "px",  дают в результате 11 . После этого происходит конкатенация строк. "...если хотя бы один операнд является строкой, то второй будет также преобразован в строку." Трепачёв
-// console.log(d);
-// let f = "3px" - 5;
-// console.log(f);
-// // NaN, от строки отнимаем число,  была выполнена бессмысленная операция
-
-// let ab = "30px" + "50px";
-// console.log(ab);
-// // "30px50px", сложение строк, конкаттенация
-// let bc = "50px" - "30px";
-// console.log(bc);
-// // NaN, была выполнена бессмысленная операция
+}
+addList();
