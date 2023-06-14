@@ -33,7 +33,6 @@ const gallery = [
   },
 ];
 const div = document.createElement('div');
-div.className = "app";
 document.body.append(div);
 
 div.style.border = '3px solid olive';
@@ -68,16 +67,14 @@ for (let i = 0; i < gallery.length; i++) {
   `;
  
 const img = cardList.querySelectorAll('img');
-img[1].style.width = '100%';
-img[6].style.width = '100%';
-img[6].style.minHeight = '190px';
 
-img[3].style.maxHeight = '190px';
-img[3].style.width = '100%';
-img[7].style.maxHeight = '190px';
-img[7].style.width = '100%';
-img[4].style.maxHeight = '190px';
-img[4].style.width = '100%';
+for (let i = 0; i < gallery.length; i++ ) {
+  img[i].style.cssText = `
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`
+}
 
 }
 addList();
