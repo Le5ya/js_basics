@@ -32,33 +32,33 @@ const gallery = [
     title: "Шевроле"
   },
 ];
-const div = document.createElement('div');
-document.body.append(div);
 
-div.style.border = '3px solid olive';
-div.style.maxWidth = '1225px';
-div.style.margin = '20px auto';
-div.style.padding = '20px';
+const app = document.querySelector('.app');
+
+app.style.border = '3px solid olive';
+app.style.maxWidth = '1225px';
+app.style.margin = '20px auto';
+app.style.padding = '20px';
 
 
 function addList() {
-const cardList = document.createElement('ul');
-cardList.className = "card__list";
-div.append(cardList);
+  const cardList = document.createElement('ul');
+  cardList.className = "card__list";
+  app.append(cardList);
 
-for (let i = 0; i < gallery.length; i++) {
-  const cardItem = document.createElement('li');
-  cardItem.className = "card__item";
-  cardList.append(cardItem);
+  for (let i = 0; i < gallery.length; i++) {
+    const cardItem = document.createElement('li');
+    cardItem.className = "card__item";
+    cardList.append(cardItem);
 
-  cardItem.innerHTML = `
-  <figure>
-  <img src="${gallery[i].url}" alt="">
-  <figcaption>${gallery[i].title}</figcaption>
-</figure>
-  `;
+    cardItem.innerHTML = `
+    <figure>
+    <img src="${gallery[i].url}" alt="">
+    <figcaption>${gallery[i].title}</figcaption>
+  </figure>
+    `;
 
-}
+  }
   cardList.style.cssText = `
     display: grid;
     grid-template-columns: repeat(4, 1fr);
